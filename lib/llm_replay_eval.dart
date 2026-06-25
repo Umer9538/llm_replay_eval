@@ -12,3 +12,6 @@ export 'src/cassette.dart';
 export 'src/cassette_store.dart';
 export 'src/fingerprint.dart';
 export 'src/replay_mode.dart';
+
+// --- Integration (runtime-agnostic record/replay session) -------------------
+export 'src/replay_session.dart';
