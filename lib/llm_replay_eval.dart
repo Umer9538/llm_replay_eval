@@ -6,3 +6,9 @@
 /// tests run fast, offline, and byte-identical every time, even for in-process
 /// models.
 library;
+
+// --- Cassette engine (record/replay core) -----------------------------------
+export 'src/cassette.dart';
+export 'src/cassette_store.dart';
+export 'src/fingerprint.dart';
+export 'src/replay_mode.dart';
