@@ -147,8 +147,12 @@ class _FakeJudge implements OnDeviceLlm {
   String get modelId => 'fake-judge';
 
   @override
-  Future<String> getResponse(String prompt) async =>
-      '{"score": 0.95, "pass": true, "reason": "correctly identifies Paris"}';
+  Future<String> getResponse(String prompt) async {
+    await Future<void>.delayed(
+      const Duration(milliseconds: 800),
+    ); // judge model
+    return '{"score": 0.95, "pass": true, "reason": "correctly identifies Paris"}';
+  }
 
   @override
   Stream<String> getResponseAsync(String prompt) async* {

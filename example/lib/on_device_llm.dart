@@ -19,14 +19,17 @@ class FakeGemma implements OnDeviceLlm {
 
   @override
   Future<String> getResponse(String prompt) async {
-    await Future<void>.delayed(const Duration(milliseconds: 5)); // "inference"
+    // Real on-device inference takes hundreds of ms+; this stand-in mimics that
+    // so the record/replay speed difference is realistic. (The delay is never
+    // recorded into the cassette — replays stay instant and deterministic.)
+    await Future<void>.delayed(const Duration(milliseconds: 800));
     return _answer(prompt);
   }
 
   @override
   Stream<String> getResponseAsync(String prompt) async* {
     for (final word in _answer(prompt).split(' ')) {
-      await Future<void>.delayed(const Duration(milliseconds: 2));
+      await Future<void>.delayed(const Duration(milliseconds: 120));
       yield '$word ';
     }
   }
