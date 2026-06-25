@@ -1,0 +1,22 @@
+name: llm_replay_eval_example
+description: Example app and tests for llm_replay_eval.
+publish_to: none
+version: 1.0.0
+
+environment:
+  sdk: ^3.11.5
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  llm_replay_eval:
+    path: ../
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true

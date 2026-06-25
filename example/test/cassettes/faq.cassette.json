@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "name": "faq",
+  "interactions": [
+    {
+      "key": "912c77eaff71df6481a43e55f424d13da0e759e75fe392a2bb608969ed048454",
+      "request": {
+        "model": "fake-gemma-2b",
+        "prompt": "Capital of France?",
+        "temperature": 0
+      },
+      "response": {
+        "kind": "oneShot",
+        "chunks": [
+          {
+            "text": "The capital of France is Paris."
+          }
+        ]
+      }
+    },
+    {
+      "key": "1cd2bf498a59f377c61ca36514e789d052f6c8a5022d5b260ed9fd7c8ba5c2c8",
+      "request": {
+        "model": "fake-gemma-2b",
+        "prompt": "Capital of France?",
+        "stream": true
+      },
+      "response": {
+        "kind": "streaming",
+        "chunks": [
+          {
+            "text": "The "
+          },
+          {
+            "text": "capital "
+          },
+          {
+            "text": "of "
+          },
+          {
+            "text": "France "
+          },
+          {
+            "text": "is "
+          },
+          {
+            "text": "Paris. "
+          }
+        ]
+      }
+    },
+    {
+      "key": "40f8322edb9ce4782412ae9c1a22e825dd7509d9b2075f01a3e252629b540e8a",
+      "request": {
+        "model": "fake-gemma-2b",
+        "prompt": "List 3 fruits as JSON"
+      },
+      "response": {
+        "kind": "oneShot",
+        "chunks": [
+          {
+            "text": "{\"fruits\": [\"apple\", \"banana\", \"cherry\"]}"
+          }
+        ]
+      }
+    },
+    {
+      "key": "498ce97da9dcb0f2ac979e3a50035da1c7d6a43f6c809305771bbde9afa92c4c",
+      "request": {
+        "model": "judge",
+        "output": "The capital of France is Paris.",
+        "role": "judge",
+        "rubric": "Does the answer correctly name Paris as the capital of France?"
+      },
+      "response": {
+        "kind": "oneShot",
+        "chunks": [
+          {
+            "text": "{\"score\": 0.95, \"pass\": true, \"reason\": \"correctly identifies Paris\"}"
+          }
+        ]
+      }
+    }
+  ]
+}
